@@ -1,0 +1,19 @@
+{
+    "python.defaultInterpreterPath": ".venv",
+    "python.terminal.activateEnvInCurrentTerminal": true,
+    "python.formatting.provider": "black",
+    "python.formatting.blackArgs": [
+        "--line-length",
+        "150"
+    ],
+    "editor.formatOnPaste": false,
+    "editor.formatOnSave": true,
+    "python.sortImports.args": [
+        "--profile=black"
+    ],
+    "[python]": {
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": true,
+        }
+    }
+}
