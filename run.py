@@ -13,6 +13,27 @@ from util.weather import get_weather
 load_dotenv(verbose=True)
 
 
+def switch_text_editor():
+    while True:
+        try:
+            time.sleep(1)
+            driver.switch_to.default_content()
+            driver.switch_to.frame(0)
+            break
+        except:
+            pass
+
+
+def switch_default():
+    while True:
+        try:
+            time.sleep(1)
+            driver.switch_to.default_content()
+            break
+        except:
+            pass
+
+
 def thecamp_login():
     login_url = "https://www.thecamp.or.kr/login/viewLogin.do"
     driver.get(login_url)
@@ -47,10 +68,11 @@ def write_letter():
     now_date = now.strftime("%Y-%m-%d")
     driver.find_element(By.XPATH, '//*[@id="sympathyLetterSubject"]').send_keys(f"[{now_date}] 일기예보")
 
-    driver.switch_to.default_content()
-    driver.switch_to.frame(0)
+    switch_text_editor()
 
     driver.find_element(By.XPATH, "/html/body/p").send_keys(get_weather())
+
+    switch_default()
 
     driver.switch_to.default_content()
     driver.find_element(By.XPATH, "/html/body/div[1]/div[3]/section/div[2]/a[3]").click()
