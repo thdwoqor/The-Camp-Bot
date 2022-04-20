@@ -1,4 +1,5 @@
 import os
+import ssl
 from datetime import datetime
 
 import requests
@@ -34,4 +35,5 @@ def today():
 
 
 if __name__ == "__main__":
+    ssl._create_default_https_context = ssl._create_unverified_context
     letter(f"[{today()}] 일기예보", f"<p>{get_weather()}</p>")
