@@ -10,7 +10,7 @@ on:
   repository_dispatch:
     types: [build-event]
   schedule:
-    - cron: '0 12 * * *'
+    - cron: '0 15 * * *'
     
 jobs:
   build:
@@ -34,15 +34,6 @@ jobs:
         jq -r 'to_entries|map("\(.key)=\(.value|tostring)")|.[]' <<< "$SECRETS_CONTEXT" > .env
       env:
         SECRETS_CONTEXT: ${{ toJson(secrets) }}
-
-    - name: Install ubuntu package
-      run: |        
-        sudo apt-get install fonts-unfonts-core
-        sudo apt-get install fonts-unfonts-extra
-        wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add        
-        sudo apt-get install google-chrome-stable    
-        wget https://chromedriver.storage.googleapis.com/2.40/chromedriver_linux64.zip
-        unzip ./chromedriver_linux64.zip
 
     - name: Run run.py
       run: |
