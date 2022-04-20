@@ -5,6 +5,7 @@ from datetime import datetime
 import requests
 from dotenv import load_dotenv
 
+from util.trends import get_trends
 from util.weather import get_weather
 
 load_dotenv()
@@ -37,3 +38,4 @@ def today():
 if __name__ == "__main__":
     ssl._create_default_https_context = ssl._create_unverified_context
     letter(f"[{today()}] 일기예보", f"<p>{get_weather()}</p>")
+    letter(f"[{today()}] 인기 검색어", f"<p>{get_trends()}</p>")
