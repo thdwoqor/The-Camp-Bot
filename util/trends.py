@@ -20,6 +20,6 @@ def get_trends():
     text = ""
 
     for data in json_data:
-        text += f'{data["title"]["query"]}%<br/>{replace_all(data["articles"][0]["title"], replacements)}<br/>{replace_all(data["articles"][0]["snippet"], replacements)}<br/><br/>'
+        text += f'{data["title"]["query"]}<br/>{replace_all(data["articles"][0]["title"], replacements)}<br/>{replace_all(data["articles"][0]["snippet"], replacements)}<br/><br/>'
 
     return text
