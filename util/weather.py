@@ -56,7 +56,7 @@ def get_weather():
         if weather["category"] == "PTY":
             text += f'강수형태: {ptv_code(weather["fcstValue"])}, '
         if weather["category"] == "POP":
-            text += f'강수확률: {weather["fcstValue"]}%\n'
+            text += f'강수확률: {weather["fcstValue"]}%<br/>'
             if is_end(weather["fcstTime"]):
-                text += "\n"
+                text += "<br/>"
     return text
