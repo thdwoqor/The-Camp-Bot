@@ -35,10 +35,10 @@ def is_end(dt_txt: str):
 
 def get_weather():
     service_key = os.getenv("KEY")
-    now = datetime.now() - timedelta(1)
+    now = datetime.now()
     now_date = now.strftime("%Y%m%d")
 
-    api_url = f"https://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getVilageFcst?serviceKey={service_key}&pageNo=1&numOfRows=1000&dataType=JSON&base_date={now_date}&base_time=0500&nx=62&ny=95"
+    api_url = f"https://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getVilageFcst?serviceKey={service_key}&pageNo=1&numOfRows=1000&dataType=JSON&base_date={now_date}&base_time=1100&nx=62&ny=95"
 
     data = urlopen(api_url).read().decode("utf8")
     json_data = json.loads(data)["response"]["body"]["items"]["item"]
