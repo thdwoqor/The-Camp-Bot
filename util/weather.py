@@ -4,6 +4,11 @@ from datetime import datetime, timedelta
 from urllib.request import urlopen
 
 
+def get_date():
+    now = datetime.now()
+    return now.strftime("%Y%m%d")
+
+
 def date_to_transform(date: str) -> str:
     return datetime.strftime(datetime.strptime(date, "%Y%m%d"), "%Y-%m-%d")
 
@@ -35,8 +40,8 @@ def is_end(dt_txt: str):
 
 def get_weather():
     service_key = os.getenv("KEY")
-    now = datetime.now()
-    now_date = now.strftime("%Y%m%d")
+
+    now_date = get_date()
 
     api_url = f"https://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getVilageFcst?serviceKey={service_key}&pageNo=1&numOfRows=1000&dataType=JSON&base_date={now_date}&base_time=1100&nx=62&ny=95"
 
