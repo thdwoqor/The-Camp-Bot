@@ -14,7 +14,7 @@ def get_sudoku():
     try:
         now_date = get_random_date()
         print(now_date)
-        html = requests.get(f"https://kookbang.dema.mil.kr/newsWeb/{now_date}/1/BBSMSTR_000000010595/view.do")
+        html = requests.get(f"https://kookbang.dema.mil.kr/newsWeb/{now_date}/1/BBSMSTR_000000010595/view.do", verify=False, timeout=5)
         soup = BeautifulSoup(html.text, "html.parser")
 
         contents = soup.find("img", class_="txc-image")["src"]
