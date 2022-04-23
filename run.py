@@ -29,7 +29,7 @@ def letter(subject: str, content: str):
     url = "https://www.thecamp.or.kr/consolLetter/insertConsolLetterA.do"
     cookie = os.getenv("COOKIE")
     response = requests.post(url=url, data=data, headers={"cookie": cookie}, verify=False, timeout=5)
-    # print(response.text)
+    print(response.text)
     if response.status_code != 200:
         raise
 

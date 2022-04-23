@@ -45,7 +45,7 @@ def get_weather():
 
     api_url = f"https://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getVilageFcst?serviceKey={service_key}&pageNo=1&numOfRows=1000&dataType=JSON&base_date={now_date}&base_time=1100&nx=62&ny=95"
 
-    data = urlopen(api_url).read().decode("utf8")
+    data = urlopen(api_url).read()
     json_data = json.loads(data)["response"]["body"]["items"]["item"]
 
     text = ""
