@@ -12,6 +12,12 @@
 | :---: | 
 | ![인기 검색어](https://user-images.githubusercontent.com/83541246/164166706-7016726b-aa11-4684-a4f5-18dcd7e28ceb.PNG) |
 | [구글 트렌드](https://trends.google.co.kr/trends/trendingsearches/daily?geo=KR)에서 일별 인기 급상승 검색어 API을 받아와서 위문편지를 보냅니다. |  
+
+| **스도쿠** |
+| :---: | 
+| ![스도쿠](https://user-images.githubusercontent.com/83541246/165344181-fe1c24a4-f430-4d61-8c5a-340caa7f3491.PNG) |
+| [국방 일보](https://kookbang.dema.mil.kr)에서 스도쿠 이미지를 받아와서 위문편지를 보냅니다. |  
+
 ## Getting Started  
 
 ### Installation
